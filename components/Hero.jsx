@@ -8,7 +8,7 @@ import { BackgroundBeams } from "./BackgroundBeams";
 
 export default function Hero() {
     return (
-        <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <section id="home" className="relative min-h-screen flex items-center pt-32 overflow-hidden">
             <BackgroundBeams />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
