@@ -1,16 +1,45 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #00ff9d; /* Terminal Green */
-  --color-secondary: #00e5ff; /* Cyan */
-  --color-accent: #1a1a1a; /* Dark Surface */
-  --color-card: #0a0a0a; /* Void Black Card */
+  --color-primary: #f97316;
+  /* Updated from Terminal Green */
+  --color-secondary: #00e5ff;
+  /* Cyan */
+  --color-accent: #1a1a1a;
+  /* Dark Surface */
+  --color-card: #1e293b;
+  /* Updated from Void Black Card */
   --color-border: #333333;
+
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-marquee2: marquee2 25s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
 }
 
 :root {
-  --background: #050505; /* Void Black */
-  --foreground: #e0e0e0; /* Terminal Gray */
+  --background: #0f172a;
+  /* Deep Slate */
+  --foreground: #e0e0e0;
+  /* Terminal Gray */
 }
 
 body {

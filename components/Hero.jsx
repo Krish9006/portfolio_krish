@@ -1,18 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin, Mail, Play } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { BackgroundBeams } from "./BackgroundBeams";
 
 export default function Hero() {
     return (
         <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-            {/* Decorative Background Elements */}
-            <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -z-10" />
-            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-3xl -z-10" />
+            <BackgroundBeams />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     {/* Left Content */}
