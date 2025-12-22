@@ -1,88 +1,57 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, ArrowRight, Send } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function Contact() {
     return (
-        <section id="contact" className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <section id="contact" className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -z-10" />
+
+            <div className="max-w-4xl mx-auto text-center">
                 <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
                     <span className="text-primary font-medium tracking-wider uppercase text-sm">Contact Me</span>
                     <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6">Let's Work Together</h2>
-                    <p className="text-slate-400 text-lg mb-12">
-                        I'm currently available for freelance work. Let's discuss how I can help you achieve your goals.
+                    <p className="text-slate-400 text-lg mb-12 max-w-2xl mx-auto">
+                        I'm currently available for freelance work. Feel free to reach out via phone or email to discuss your project.
                     </p>
 
-                    <div className="space-y-8">
-                        <div className="flex items-start gap-6">
-                            <div className="w-14 h-14 rounded-full bg-card border border-border flex items-center justify-center text-primary shrink-0">
-                                <Phone className="w-6 h-6" />
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="flex flex-col items-center gap-4 p-6 rounded-3xl bg-card/50 border border-white/5 hover:border-primary/30 transition-all duration-300 group">
+                            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all duration-300">
+                                <Phone className="w-8 h-8" />
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold mb-1">Phone</h3>
-                                <p className="text-slate-400">+1 (234) 567-890</p>
+                                <p className="text-slate-400">+91 98765 43210</p>
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-6">
-                            <div className="w-14 h-14 rounded-full bg-card border border-border flex items-center justify-center text-primary shrink-0">
-                                <Mail className="w-6 h-6" />
+                        <div className="flex flex-col items-center gap-4 p-6 rounded-3xl bg-card/50 border border-white/5 hover:border-primary/30 transition-all duration-300 group">
+                            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all duration-300">
+                                <Mail className="w-8 h-8" />
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold mb-1">Email</h3>
-                                <p className="text-slate-400">hello@example.com</p>
+                                <p className="text-slate-400">guptashanu341@gmail.com</p>
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-6">
-                            <div className="w-14 h-14 rounded-full bg-card border border-border flex items-center justify-center text-primary shrink-0">
-                                <MapPin className="w-6 h-6" />
+                        <div className="flex flex-col items-center gap-4 p-6 rounded-3xl bg-card/50 border border-white/5 hover:border-primary/30 transition-all duration-300 group">
+                            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all duration-300">
+                                <MapPin className="w-8 h-8" />
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold mb-1">Address</h3>
-                                <p className="text-slate-400">123 Design Street, Creative City</p>
+                                <p className="text-slate-400">India</p>
                             </div>
                         </div>
                     </div>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-card p-8 md:p-10 rounded-3xl border border-border"
-                >
-                    <form className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="space-y-2">
-                                <label className="text-sm font-medium text-slate-300">Full Name</label>
-                                <input type="text" className="w-full bg-secondary/50 border border-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="John Doe" />
-                            </div>
-                            <div className="space-y-2">
-                                <label className="text-sm font-medium text-slate-300">Email Address</label>
-                                <input type="email" className="w-full bg-secondary/50 border border-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="john@example.com" />
-                            </div>
-                        </div>
-
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-slate-300">Subject</label>
-                            <input type="text" className="w-full bg-secondary/50 border border-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Project Discussion" />
-                        </div>
-
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-slate-300">Message</label>
-                            <textarea rows={4} className="w-full bg-secondary/50 border border-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Tell me about your project..." />
-                        </div>
-
-                        <button type="button" className="w-full py-4 rounded-xl bg-primary text-black font-bold hover:bg-white transition-colors flex items-center justify-center gap-2">
-                            Send Message <Send className="w-5 h-5" />
-                        </button>
-                    </form>
                 </motion.div>
             </div>
         </section>

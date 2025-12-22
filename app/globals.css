@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #d9f154;
-  --color-secondary: #1f1f1f;
-  --color-accent: #2a2a2a;
-  --color-card: #161616;
-  --color-border: #2a2a2a;
+  --color-primary: #00ff9d; /* Terminal Green */
+  --color-secondary: #00e5ff; /* Cyan */
+  --color-accent: #1a1a1a; /* Dark Surface */
+  --color-card: #0a0a0a; /* Void Black Card */
+  --color-border: #333333;
 }
 
 :root {
-  --background: #0b0b0b;
-  --foreground: #ffffff;
+  --background: #050505; /* Void Black */
+  --foreground: #e0e0e0; /* Terminal Gray */
 }
 
 body {

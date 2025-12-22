@@ -27,45 +27,29 @@ export default function Hero() {
 
                         <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
                             Hello, I'm <br />
-                            <span className="text-primary">Roy C. Jones</span> <br />
+                            <span className="text-primary">Krish Gupta</span> <br />
                             <span className="text-stroke text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">
-                                Web Designer
+                                Full Stack Engineer
                             </span>
                         </h1>
 
                         <p className="text-slate-400 text-lg mb-8 max-w-lg leading-relaxed">
-                            I denounce with righteous indignation dislike demoralized by the charms of pleasure.
+                            Building scalable web applications and digital experiences.
                         </p>
 
                         <div className="flex flex-wrap gap-4 mb-12">
                             <Link
-                                href="#contact"
+                                href="mailto:guptashanu341@gmail.com?subject=Project%20Inquiry&body=Hi%20Krish,%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
                                 className="px-8 py-4 rounded-full bg-primary text-black font-bold hover:bg-white transition-colors flex items-center gap-2"
                             >
                                 Hire Me <ArrowRight className="w-5 h-5" />
                             </Link>
                             <a
-                                href="#"
+                                href="https://drive.google.com/file/d/1J99JvIoUje0Iwd1EpnHucChBxJulzN32/view?usp=drive_link"
                                 className="px-8 py-4 rounded-full border border-slate-700 text-white font-medium hover:border-primary hover:text-primary transition-colors flex items-center gap-2"
                             >
                                 Download Resume <Download className="w-5 h-5" />
                             </a>
-                        </div>
-
-                        {/* Stats */}
-                        <div className="grid grid-cols-3 gap-8 border-t border-slate-800 pt-8">
-                            <div>
-                                <h3 className="text-4xl font-bold text-primary mb-1">13+</h3>
-                                <p className="text-sm text-slate-400">Years of Experience</p>
-                            </div>
-                            <div>
-                                <h3 className="text-4xl font-bold text-primary mb-1">8k+</h3>
-                                <p className="text-sm text-slate-400">Projects Completed</p>
-                            </div>
-                            <div>
-                                <h3 className="text-4xl font-bold text-primary mb-1">99%</h3>
-                                <p className="text-sm text-slate-400">Client Satisfaction</p>
-                            </div>
                         </div>
                     </motion.div>
 
@@ -83,23 +67,12 @@ export default function Hero() {
 
                             {/* Main Image Container */}
                             <div className="absolute inset-8 rounded-full overflow-hidden bg-slate-900 border-4 border-slate-800">
-                                {/* Placeholder for User Image - Using a generic professional avatar for now */}
-                                <div className="w-full h-full bg-slate-800 flex items-center justify-center text-slate-600">
-                                    <span className="text-6xl">👤</span>
-                                </div>
-                            </div>
-
-                            {/* Floating Badge */}
-                            <div className="absolute top-10 right-10 bg-card p-4 rounded-2xl border border-slate-800 shadow-2xl animate-bounce duration-[3000ms]">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                                        <Play className="w-5 h-5 fill-current" />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-slate-400">Intro Video</p>
-                                        <p className="font-bold text-white">Watch Now</p>
-                                    </div>
-                                </div>
+                                <Image
+                                    src="/images/profile.jpeg"
+                                    alt="Krish Gupta"
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
                         </div>
                     </motion.div>

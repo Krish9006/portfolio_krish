@@ -6,29 +6,38 @@ import Image from "next/image";
 
 const projects = [
     {
-        title: "SkillSync ",
-        category: "Web Development",
-        tags: ["Next.js", "Tailwind", "Stripe"],
-        image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-        github: "#",
-        demo: "#",
+        title: "SkillSync",
+        category: "SaaS Web Application",
+        tags: [
+            "Next.js",
+            "React",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Clerk Auth",
+            "JavaScript"
+        ],
+        image: "/images/skillsync.png",
+        github: "https://github.com/Krish9006/SkillSync-",
+        demo: "https://skillsynkrish.netlify.app/",
     },
     {
-        title: "SaaS Dashboard",
-        category: "Product Design",
-        tags: ["React", "TypeScript", "Firebase"],
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        github: "#",
-        demo: "#",
+        title: "Milky Drip – E-Commerce Platform",
+        category: "Frontend Web Development",
+        tags: ["React", "Tailwind CSS", "JavaScript", "React Router", "LocalStorage"],
+        image: "/images/milkydrip.png",
+        github: "https://github.com/Krish9006/MilkyDrip",
+        demo: "https://milkydrip.vercel.app",
     },
+
     {
-        title: "AI Chat Interface",
-        category: "UI/UX Design",
-        tags: ["Next.js", "OpenAI", "Tailwind"],
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-        github: "#",
-        demo: "#",
+        title: "SmartCart – React E-Commerce App",
+        category: "Frontend Web Development",
+        tags: ["React", "JavaScript", "React Router", "LocalStorage", "CSS"],
+        image: "/images/smartcart1.png",
+        github: "https://github.com/Krish9006/React_Youtube",
+        demo: "https://react-nitin-sir.vercel.app/",
     },
+
 ];
 
 export default function Projects() {
