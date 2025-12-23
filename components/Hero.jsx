@@ -44,7 +44,7 @@ export default function Hero() {
                                 Hire Me <ArrowRight className="w-5 h-5" />
                             </Link>
                             <a
-                                href="https://drive.google.com/file/d/1J99JvIoUje0Iwd1EpnHucChBxJulzN32/view?usp=drive_link"
+                                href="https://drive.google.com/file/d/1Yc0uH5qKDsoohowkonuMpXvCt79Pkkwv/view?usp=sharing"
                                 className="px-8 py-4 rounded-full border border-slate-700 text-white font-medium hover:border-primary hover:text-primary transition-colors flex items-center gap-2"
                             >
                                 Download Resume <Download className="w-5 h-5" />

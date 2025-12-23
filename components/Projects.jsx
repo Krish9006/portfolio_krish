@@ -19,16 +19,16 @@ const projects = [
         description: "A modern, high-performance e-commerce platform for streetwear. Includes product filtering, cart functionality, and a seamless checkout experience.",
         tags: ["React", "Redux", "Node.js", "Stripe"],
         image: "/images/milkydrip_hd.png",
-        github: "#",
-        demo: "#",
+        github: "https://github.com/Krish9006/MilkyDrip",
+        demo: "https://milky-drip.vercel.app/",
     },
     {
         title: "SmartCart - Electronics Store",
         description: "A sleek online store for electronics with dynamic product rendering, search functionality, and responsive design.",
         tags: ["React", "Context API", "CSS Modules"],
         image: "/images/smartcart_hd.png",
-        github: "#",
-        demo: "#",
+        github: "https://github.com/Krish9006/React-Nitin-Sir",
+        demo: "https://react-nitin-sir.vercel.app/",
     },
 ];
 
