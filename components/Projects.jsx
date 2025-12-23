@@ -23,13 +23,14 @@ const projects = [
         demo: "https://milky-drip.vercel.app/",
     },
     {
-        title: "SmartCart - Electronics Store",
-        description: "A sleek online store for electronics with dynamic product rendering, search functionality, and responsive design.",
-        tags: ["React", "Context API", "CSS Modules"],
+        title: "Food Ordering Platform",
+        description: "A modern food ordering web application that fetches real-time restaurant and food data via API and presents it in an intuitive, card-based UI inspired by platforms like Swiggy.",
+        tags: ["React", "Context API", "API Integration", "Responsive UI"],
         image: "/images/smartcart_hd.png",
         github: "https://github.com/Krish9006/React-Nitin-Sir",
-        demo: "https://react-nitin-sir.vercel.app/",
-    },
+    demo: "https://react-nitin-sir.vercel.app/",
+},
+
 ];
 
 export default function Projects() {
