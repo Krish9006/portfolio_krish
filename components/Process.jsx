@@ -6,26 +6,26 @@ import { Search, PenTool, Code2, Rocket } from "lucide-react";
 const steps = [
     {
         number: "01",
-        title: "Discovery",
-        description: "We discuss your goals, target audience, and requirements to define a clear roadmap.",
+        title: "Strategy & Consulting",
+        description: "We define your business goals and target audience to build a product that solves real problems.",
         icon: <Search className="w-6 h-6" />,
     },
     {
         number: "02",
-        title: "Design & Plan",
-        description: "I create wireframes and architectural plans to ensure the solution fits your needs perfectly.",
+        title: "UI/UX Design",
+        description: "I craft intuitive, high-converting designs that keep your users engaged and drive sales.",
         icon: <PenTool className="w-6 h-6" />,
     },
     {
         number: "03",
-        title: "Development",
-        description: "I build your product using modern tech stacks, keeping you updated with regular progress.",
+        title: "Agile Development",
+        description: "I build scalable, secure, and fast applications using the latest tech, ensuring future-proof code.",
         icon: <Code2 className="w-6 h-6" />,
     },
     {
         number: "04",
-        title: "Launch & Support",
-        description: "We deploy your project to the world. I provide support to ensure everything runs smoothly.",
+        title: "Growth & Launch",
+        description: "We launch your product with SEO optimization and performance tuning for maximum impact.",
         icon: <Rocket className="w-6 h-6" />,
     },
 ];

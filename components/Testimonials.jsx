@@ -32,6 +32,32 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+    const [isLoading, setIsLoading] = React.useState(true);
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1500);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (isLoading) {
+        return (
+            <section id="testimonials" className="py-20 relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center space-y-4">
+                    <div className="h-4 w-24 mx-auto rounded shimmer" />
+                    <div className="h-10 w-64 mx-auto rounded shimmer" />
+                    <div className="h-4 w-96 mx-auto rounded shimmer" />
+                </div>
+                <div className="flex gap-8 overflow-hidden px-4">
+                    {[1, 2, 3].map((item) => (
+                        <div key={item} className="h-[200px] w-[400px] flex-shrink-0 rounded-2xl shimmer border border-white/5" />
+                    ))}
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section id="testimonials" className="py-20 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">

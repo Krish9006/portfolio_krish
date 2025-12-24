@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { Code2, Database, Layout, Server, Wrench } from "lucide-react";
 import {
@@ -56,6 +57,32 @@ const skillCategories = [
 ];
 
 export default function Skills() {
+    const [isLoading, setIsLoading] = React.useState(true);
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1500);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (isLoading) {
+        return (
+            <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <div className="text-center mb-16 space-y-4">
+                    <div className="h-4 w-24 mx-auto rounded shimmer" />
+                    <div className="h-10 w-64 mx-auto rounded shimmer" />
+                    <div className="h-4 w-96 mx-auto rounded shimmer" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {[1, 2, 3, 4].map((item) => (
+                        <div key={item} className="h-[300px] rounded-2xl shimmer border border-white/5" />
+                    ))}
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <motion.div

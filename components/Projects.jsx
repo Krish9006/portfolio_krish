@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
@@ -28,12 +29,46 @@ const projects = [
         tags: ["React", "Context API", "API Integration", "Responsive UI"],
         image: "/images/smartcart_hd.png",
         github: "https://github.com/Krish9006/React-Nitin-Sir",
-    demo: "https://react-nitin-sir.vercel.app/",
-},
+        demo: "https://react-nitin-sir.vercel.app/",
+    },
+    {
+        title: "Portfolio Website",
+        description: "This very website! A premium portfolio designed to attract freelance clients. Built with Next.js, Framer Motion, and distinct 'Shimmer' loading effects for a polished user experience.",
+        tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Shimmer UI"],
+        image: "/images/portfolio_hd.jpg",
+        github: "https://github.com/Krish9006/portfolio_krish",
+        demo: "https://github.com/Krish9006/portfolio_krish",
+    },
 
 ];
 
 export default function Projects() {
+    const [isLoading, setIsLoading] = React.useState(true);
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1500);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (isLoading) {
+        return (
+            <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <div className="text-center mb-16 space-y-4">
+                    <div className="h-4 w-24 mx-auto rounded shimmer" />
+                    <div className="h-10 w-64 mx-auto rounded shimmer" />
+                    <div className="h-4 w-96 mx-auto rounded shimmer" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {[1, 2, 3].map((item) => (
+                        <div key={item} className="h-[450px] rounded-2xl shimmer border border-white/5" />
+                    ))}
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <motion.div

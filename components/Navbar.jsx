@@ -46,7 +46,7 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
+                    {navLinks.slice(0, -1).map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
@@ -55,6 +55,12 @@ export default function Navbar() {
                             {link.name}
                         </Link>
                     ))}
+                    <Link
+                        href="#contact"
+                        className="px-6 py-2 rounded-full bg-primary text-black font-bold text-sm hover:bg-white transition-colors"
+                    >
+                        Hire Me
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}

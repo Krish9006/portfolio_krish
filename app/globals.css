@@ -33,6 +33,28 @@
       transform: translateX(0%);
     }
   }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  --animate-shimmer: shimmer 2s infinite linear;
+}
+
+/* Shimmer Utility */
+.shimmer {
+  background: linear-gradient(90deg,
+      var(--color-card) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      var(--color-card) 100%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
 }
 
 :root {
