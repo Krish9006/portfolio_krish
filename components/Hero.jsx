@@ -38,7 +38,7 @@ export default function Hero() {
 
                         <div className="flex flex-wrap gap-4 mb-12">
                             <Link
-                                href="mailto:guptashanu341@gmail.com?subject=Project%20Inquiry&body=Hi%20Krish,%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+                                href="#contact"
                                 className="px-8 py-4 rounded-full bg-primary text-black font-bold hover:bg-white transition-colors flex items-center gap-2"
                             >
                                 Hire Me <ArrowRight className="w-5 h-5" />
