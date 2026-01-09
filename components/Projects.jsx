@@ -39,6 +39,14 @@ const projects = [
         github: "https://github.com/Krish9006/portfolio_krish",
         demo: "https://github.com/Krish9006/portfolio_krish",
     },
+   {
+    title: "Krishka Kitchen",
+    description: "A high-performance 'Social-Commerce' platform merging food delivery with a TikTok-style video feed. Features robust dual-role authentication (User/Partner), real-time cart state management via Context API, and a premium dark-mode UI optimized for maximum user engagement.",
+    tags: ["React & Vite", "Node.js & Express", "MongoDB Aggregations", "Context API", "JWT Auth"],
+    image: "/images/krishka_showcase.png",
+    github: "https://github.com/Krish9006/krishka_Kitchen",
+    demo: "https://krishka-kitchen.vercel.app/",
+}
 
 ];
 
