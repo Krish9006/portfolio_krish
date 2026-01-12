@@ -7,14 +7,14 @@ import Image from "next/image";
 import SpotlightCard from "./SpotlightCard";
 
 const projects = [
-    {
-        title: "SkillSync - Team Finder",
-        description: "A comprehensive SaaS platform for students to find teammates for hackathons and projects. Features real-time matching, user profiles, and skill-based filtering.",
-        tags: ["Next.js", "React", "Tailwind CSS", "Clerk Auth", "Framer Motion"],
-        image: "/images/skillsync_hd.png",
-        github: "https://github.com/Krish9006/SkillSync-",
-        demo: "https://skillsynkrish.netlify.app/",
-    },
+   {
+    title: "SkillSync - Premium Team Discovery Platform",
+    description: "A high-performance SaaS application engineered for real-time professional networking. Features advanced search algorithms, secure authentication, and a 3D interactive UI that revolutionizes how developers connect.",
+    tags: ["Next.js 14", "Tailwind CSS", "Node.js", "MongoDB", "Framer Motion", "Three.js"],
+    image: "/images/skillsync_hd.png",
+    github: "https://github.com/Krish9006/SkillSync-",
+    demo: "https://skillsynkrish.netlify.app/",
+},
     {
         title: "Milky Drip - E-Commerce",
         description: "A modern, high-performance e-commerce platform for streetwear. Includes product filtering, cart functionality, and a seamless checkout experience.",
