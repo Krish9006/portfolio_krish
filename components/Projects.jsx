@@ -13,7 +13,7 @@ const projects = [
     tags: ["Next.js 14", "Tailwind CSS", "Node.js", "Express.js", "JWT", "MongoDB", "Framer Motion", "Three.js"],
     image: "/images/skillsync_hd.png",
     github: "https://github.com/Krish9006/SkillSync-",
-    demo: "https://skillsynkrish.netlify.app/",
+    demo: "https://project-buddies-krish.netlify.app/",
 },
     {
         title: "Milky Drip - E-Commerce",
