@@ -53,7 +53,7 @@ const projects = [
         tags: ["MERN Stack", "Gemini AI 2.0", "NLP", "Data Orchestration", "Cron Scheduling"],
         image: "/images/trendpulse_hd.jpg",
         github: "https://github.com/Krish9006/TrendPulse",
-        demo: "https://trendpulse-client.vercel.app/",
+        demo: "https://trend-pulse-seven.vercel.app/",
         key_achievements: [
             "Implemented 100% uptime AI service with resilient model fallbacks.",
             "Automated data extraction and sentiment analysis using Google Generative AI.",
