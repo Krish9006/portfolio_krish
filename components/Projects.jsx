@@ -59,6 +59,20 @@ const projects = [
             "Automated data extraction and sentiment analysis using Google Generative AI.",
             "Engineered denormalized data architecture for high-speed insight retrieval."
         ]
+    },
+    {
+        title: "Real-Time Chat Application",
+        description: "A fully functional, real-time messaging platform built for seamless communication. Engineered with a scalable real-time backend using Convex and secure user authentication via Clerk. Features instant message delivery, live presence indicators, and a highly responsive, aesthetically pleasing user interface from the landing page to the modern chat dashboard.",
+        tags: ["Next.js", "React", "Convex", "Clerk Auth", "Tailwind CSS", "Real-Time Systems"],
+        image: "/images/chat_app_new.png",
+        github: "https://github.com/Krish9006/chat-App",
+        demo: "https://chat-app-nine-eta-56.vercel.app/", // Replace with your actual deployed link if you have one
+        key_achievements: [
+            "Engineered a high-performance real-time messaging system with instant state synchronization via Convex.",
+            "Integrated Clerk for secure, frictionless user authentication and session management.",
+            "Designed a highly responsive and modern user interface utilizing Tailwind CSS and Shadcn UI components.",
+            "Implemented live presence indicators and seamless end-to-end functionality for a premium user experience."
+        ]
     }
 
 ];
