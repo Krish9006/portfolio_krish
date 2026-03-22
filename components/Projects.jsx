@@ -26,7 +26,7 @@ const projects = [
         "tags": ["React.js", "Vite", "Google Gemini API", "Prompt Engineering", "CSS3", "State Management"],
         "image": "/images/dsa_ai.jpg",
         "github": "https://github.com/Krish9006/DSA-AI-Instructor",
-        "demo": "", // Replace with your actual deployed link if you have one
+        "demo": "https://dsa-ai-instructor-six.vercel.app/",
         "key_achievements": [
             "Engineered a strict prompt architecture utilizing Google's Gemini API to teach complex DSA concepts using real-life metaphors.",
             "Implemented seamless, persistent conversational memory securely leveraging browser localStorage for state management.",
