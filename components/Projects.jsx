@@ -35,6 +35,14 @@ const projects = [
         ]
     },
     {
+        title: "Axiora Learning Platform",
+        description: "A premium coaching website built for Axiora Learning, focused on IGCSE students (Grades 9–10). The platform highlights structured learning, concept-first teaching, and performance tracking. Designed to deliver a clean, professional user experience with clear program presentation and strong conversion-focused sections.",
+        tags: ["Next.js", "Tailwind CSS", "TypeScript", "Responsive Design", "Education Platform"],
+        image: "/images/axiora_learning.jpg",
+        github: "https://github.com/imawadh/axiora-learning", 
+        demo: "https://www.axioralearning.com/"
+    },
+    {
         title: "SkillSync - Premium Team Discovery Platform",
         description: "A high-performance SaaS application engineered for real-time professional networking. Features advanced search algorithms, secure authentication, and a 3D interactive UI that revolutionizes how developers connect.",
         tags: ["Next.js 14", "Tailwind CSS", "Node.js", "Express.js", "JWT", "MongoDB", "Framer Motion", "Three.js"],
@@ -153,14 +161,16 @@ export default function Projects() {
                                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-2 bg-white/10 backdrop-blur-md rounded-full hover:bg-primary hover:text-black transition-colors"
-                                    >
-                                        <Github className="w-6 h-6" />
-                                    </a>
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-2 bg-white/10 backdrop-blur-md rounded-full hover:bg-primary hover:text-black transition-colors"
+                                        >
+                                            <Github className="w-6 h-6" />
+                                        </a>
+                                    )}
                                     <a
                                         href={project.demo}
                                         target="_blank"
@@ -199,15 +209,17 @@ export default function Projects() {
                                         <ExternalLink className="w-4 h-4" />
                                         Live Demo
                                     </a>
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex flex-1 items-center justify-center gap-2 py-2.5 text-sm font-semibold text-white bg-slate-800 rounded-xl hover:bg-slate-700 transition-all border border-slate-700 hover:border-slate-600 hover:scale-[1.02] active:scale-[0.98]"
-                                    >
-                                        <Github className="w-4 h-4" />
-                                        GitHub
-                                    </a>
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex flex-1 items-center justify-center gap-2 py-2.5 text-sm font-semibold text-white bg-slate-800 rounded-xl hover:bg-slate-700 transition-all border border-slate-700 hover:border-slate-600 hover:scale-[1.02] active:scale-[0.98]"
+                                        >
+                                            <Github className="w-4 h-4" />
+                                            GitHub
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>
