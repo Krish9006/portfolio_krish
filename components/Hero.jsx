@@ -20,28 +20,28 @@ export default function Hero() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium mb-6">
-                            Available for Freelance Projects
+                        <div className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium mb-6 animate-pulse">
+                            Available for Internships & Freelance
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
-                            Hello, I'm <br />
+                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 mt-2">
+                            Hi, I'm <br />
                             <span className="text-primary">Krish Gupta</span> <br />
-                            <span className="text-stroke text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">
-                                Full Stack Engineer
+                            <span className="text-stroke text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">
+                                Software Engineer
                             </span>
                         </h1>
 
                         <p className="text-slate-400 text-lg mb-8 max-w-lg leading-relaxed">
-                            Building scalable web applications and digital experiences.
+                            Data Science & AI undergrad at <strong className="text-white">IIT Guwahati</strong>. I build scalable, AI-driven, and high-performance full-stack web applications.
                         </p>
 
                         <div className="flex flex-wrap gap-4 mb-12">
                             <Link
                                 href="#contact"
-                                className="px-8 py-4 rounded-full bg-primary text-black font-bold hover:bg-white transition-colors flex items-center gap-2"
+                                className="px-8 py-4 rounded-full bg-primary text-black font-bold hover:bg-white transition-colors flex items-center gap-2 hover:scale-105 active:scale-95 duration-200"
                             >
-                                Hire Me <ArrowRight className="w-5 h-5" />
+                                Let's Talk <ArrowRight className="w-5 h-5" />
                             </Link>
                             <a
                                 href="https://drive.google.com/file/d/1Yc0uH5qKDsoohowkonuMpXvCt79Pkkwv/view?usp=sharing"

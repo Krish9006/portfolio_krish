@@ -138,7 +138,7 @@ export default function About() {
                                 &nbsp;&nbsp;name: <span className="text-green-400">"Krish Gupta"</span>,<br />
                                 &nbsp;&nbsp;college: <span className="text-green-400">"IIT Guwahati"</span>,<br />
                                 &nbsp;&nbsp;traits: [<span className="text-green-400">"Problem Solver"</span>, <span className="text-green-400">"Detail Oriented"</span>],<br />
-                                &nbsp;&nbsp;isOpenToWork: <span className="text-primary">true</span><br />
+                                &nbsp;&nbsp;seeking: [<span className="text-green-400">"Internships"</span>, <span className="text-green-400">"Freelance"</span>]<br />
                                 <span className="text-yellow-400">{"}"}</span>;
                             </div>
                         </div>

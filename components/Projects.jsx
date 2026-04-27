@@ -179,7 +179,7 @@ export default function Projects() {
                                 <p className="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">
                                     {project.description}
                                 </p>
-                                <div className="flex flex-wrap gap-2 mt-auto">
+                                <div className="flex flex-wrap gap-2 mb-6">
                                     {project.tags.map((tag, tagIndex) => (
                                         <span
                                             key={tagIndex}
@@ -188,6 +188,26 @@ export default function Projects() {
                                             {tag}
                                         </span>
                                     ))}
+                                </div>
+                                <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/10">
+                                    <a
+                                        href={project.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex flex-1 items-center justify-center gap-2 py-2.5 text-sm font-semibold text-black bg-primary rounded-xl hover:bg-primary/90 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                                    >
+                                        <ExternalLink className="w-4 h-4" />
+                                        Live Demo
+                                    </a>
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex flex-1 items-center justify-center gap-2 py-2.5 text-sm font-semibold text-white bg-slate-800 rounded-xl hover:bg-slate-700 transition-all border border-slate-700 hover:border-slate-600 hover:scale-[1.02] active:scale-[0.98]"
+                                    >
+                                        <Github className="w-4 h-4" />
+                                        GitHub
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>

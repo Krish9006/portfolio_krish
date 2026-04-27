@@ -18,15 +18,21 @@ export default function Contact() {
                     <span className="text-primary font-medium tracking-wider uppercase text-sm">Contact Me</span>
                     <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6">Let's Work Together</h2>
                     <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
-                        I'm currently available for freelance work. Feel free to reach out via phone or email, or book a free consultation call.
+                        I am currently actively looking for <strong className="text-white">Software Engineering Internships</strong> and independent freelance opportunities. Let's build something scalable and impactful together!
                     </p>
 
-                    <div className="mb-12">
+                    <div className="mb-12 flex flex-wrap items-center justify-center gap-4">
+                        <a
+                            href="mailto:guptashanu341@gmail.com"
+                            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-black font-bold rounded-full hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(132,204,22,0.3)] hover:shadow-[0_0_30px_rgba(132,204,22,0.5)] hover:-translate-y-1"
+                        >
+                            <Mail className="w-5 h-5" /> Drop an Email
+                        </a>
                         <a
                             href="https://calendly.com/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-black font-bold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-[0_0_20px_rgba(132,204,22,0.3)] hover:shadow-[0_0_30px_rgba(132,204,22,0.5)] hover:-translate-y-1"
+                            className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
                         >
                             Book a Free Call
                         </a>
