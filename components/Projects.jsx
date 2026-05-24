@@ -8,6 +8,19 @@ import SpotlightCard from "./SpotlightCard";
 
 const projects = [
     {
+        title: "ContentBrain AI: RAG-Powered Strategic Content Assistant",
+        description: "A high-performance Retrieval-Augmented Generation (RAG) platform that processes uploaded documents, generates serverless vector embeddings, and enables real-time AI-driven querying. Automates key analytical tasks including topic extraction, content ideation, and action-oriented CTA recommendation.",
+        tags: ["Next.js", "React", "Groq Llama-3.3", "Pinecone DB", "Vector Embeddings", "RAG", "Tailwind CSS"],
+        image: "/images/contentbrain_hd.svg",
+        github: "https://github.com/Krish9006/AI-Insights",
+        demo: "https://ai-insights-omega.vercel.app/",
+        key_achievements: [
+            "Implemented serverless semantic text embedding pipelines using Pinecone Native Inference (multilingual-e5-large model).",
+            "Engineered low-latency context-aware Q&A features powered by Groq Llama-3.3-70b-versatile.",
+            "Automated structured data extraction to deliver instant key insights, content outlines, and marketing CTAs."
+        ]
+    },
+    {
         title: "TrendPulse: AI-Driven Strategic Insights Engine",
         description: "A sophisticated full-stack platform that leverages Google Gemini AI to transform natural language intent into automated market analysis. Engineered a resilient AI orchestration layer with multi-model fail-safes and automated news aggregation. Features real-time sentiment scoring and a personalized dashboard for strategic trend tracking.",
         tags: ["MERN Stack", "Gemini AI 2.0", "NLP", "Data Orchestration", "Cron Scheduling"],
@@ -19,36 +32,6 @@ const projects = [
             "Automated data extraction and sentiment analysis using Google Generative AI.",
             "Engineered denormalized data architecture for high-speed insight retrieval."
         ]
-    },
-    {
-        "title": "DSA AI Instructor",
-        "description": "An intelligent, context-aware artificial intelligence instructor built with React.js and Google's Gemini API. Specifically engineered to help users master Data Structures and Algorithms through a strict pedagogy that prioritizes intuition, real-world analogies, and guided hints rather than directly spoon-feeding code.",
-        "tags": ["React.js", "Vite", "Google Gemini API", "Prompt Engineering", "CSS3", "State Management"],
-        "image": "/images/dsa_ai.jpg",
-        "github": "https://github.com/Krish9006/DSA-AI-Instructor",
-        "demo": "https://dsa-ai-instructor-six.vercel.app/",
-        "key_achievements": [
-            "Engineered a strict prompt architecture utilizing Google's Gemini API to teach complex DSA concepts using real-life metaphors.",
-            "Implemented seamless, persistent conversational memory securely leveraging browser localStorage for state management.",
-            "Designed a state-of-the-art Mix Theme UI featuring a dark sidebar navigation and a modern, responsive glassmorphism chat interface.",
-            "Developed 1-click learning paths and robust topic-filtering to restrict the AI strictly to programming and educational queries."
-        ]
-    },
-    {
-        title: "Axiora Learning Platform",
-        description: "A premium coaching website built for Axiora Learning, focused on IGCSE students (Grades 9–10). The platform highlights structured learning, concept-first teaching, and performance tracking. Designed to deliver a clean, professional user experience with clear program presentation and strong conversion-focused sections.",
-        tags: ["Next.js", "Tailwind CSS", "TypeScript", "Responsive Design", "Education Platform"],
-        image: "/images/axiora_learning.jpg",
-        github: "https://github.com/imawadh/axiora-learning", 
-        demo: "https://www.axioralearning.com/"
-    },
-    {
-        title: "SkillSync - Premium Team Discovery Platform",
-        description: "A high-performance SaaS application engineered for real-time professional networking. Features advanced search algorithms, secure authentication, and a 3D interactive UI that revolutionizes how developers connect.",
-        tags: ["Next.js 14", "Tailwind CSS", "Node.js", "Express.js", "JWT", "MongoDB", "Framer Motion", "Three.js"],
-        image: "/images/skillsync_hd.png",
-        github: "https://github.com/Krish9006/SkillSync-",
-        demo: "https://project-buddies-krish.netlify.app/",
     },
     {
         title: "Real-Time Chat Application",
@@ -65,20 +48,42 @@ const projects = [
         ]
     },
     {
+        title: "SkillSync - Premium Team Discovery Platform",
+        description: "A high-performance SaaS application engineered for real-time professional networking. Features advanced search algorithms, secure authentication, and a 3D interactive UI that revolutionizes how developers connect.",
+        tags: ["Next.js 14", "Tailwind CSS", "Node.js", "Express.js", "JWT", "MongoDB", "Framer Motion", "Three.js"],
+        image: "/images/skillsync_hd.png",
+        github: "https://github.com/Krish9006/SkillSync-",
+        demo: "https://project-buddies-krish.netlify.app/",
+    },
+    {
+        title: "Portfolio Website",
+        description: "This very website! A premium portfolio designed to attract freelance clients. Built with Next.js, Framer Motion, and distinct 'Shimmer' loading effects for a polished user experience.",
+        tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Shimmer UI"],
+        image: "/images/portfolio_hd.jpg",
+        github: "https://github.com/Krish9006/portfolio_krish",
+        demo: "https://github.com/Krish9006/portfolio_krish",
+    },
+    {
+        "title": "DSA AI Instructor",
+        "description": "An intelligent, context-aware artificial intelligence instructor built with React.js and Google's Gemini API. Specifically engineered to help users master Data Structures and Algorithms through a strict pedagogy that prioritizes intuition, real-world analogies, and guided hints rather than directly spoon-feeding code.",
+        "tags": ["React.js", "Vite", "Google Gemini API", "Prompt Engineering", "CSS3", "State Management"],
+        "image": "/images/dsa_ai.jpg",
+        "github": "https://github.com/Krish9006/DSA-AI-Instructor",
+        "demo": "https://dsa-ai-instructor-six.vercel.app/",
+        "key_achievements": [
+            "Engineered a strict prompt architecture utilizing Google's Gemini API to teach complex DSA concepts using real-life metaphors.",
+            "Implemented seamless, persistent conversational memory securely leveraging browser localStorage for state management.",
+            "Designed a state-of-the-art Mix Theme UI featuring a dark sidebar navigation and a modern, responsive glassmorphism chat interface.",
+            "Developed 1-click learning paths and robust topic-filtering to restrict the AI strictly to programming and educational queries."
+        ]
+    },
+    {
         title: "Krishka Kitchen",
         description: "A high-performance 'Social-Commerce' platform merging food delivery with a TikTok-style video feed. Features robust dual-role authentication (User/Partner), real-time cart state management via Context API, and a premium dark-mode UI optimized for maximum user engagement.",
         tags: ["React & Vite", "Node.js & Express", "MongoDB Aggregations", "Context API", "JWT Auth"],
         image: "/images/krishka_showcase.png",
         github: "https://github.com/Krish9006/krishka_Kitchen",
         demo: "https://krishka-kitchen.vercel.app/",
-    },
-    {
-        title: "Food Ordering & Algo",
-        description: "A smart food ordering platform featuring a custom recommendation algorithm. It fetches real-time data, optimizes delivery routes, and personalizes user feeds based on order history.",
-        tags: ["React", "Algorithms", "API Integration", "Optimization"],
-        image: "/images/food_ordering_photo_1771258725646.png",
-        github: "https://github.com/Krish9006/React-Nitin-Sir",
-        demo: "https://react-nitin-sir.vercel.app/",
     },
     {
         title: "Milky Drip - E-Commerce",
@@ -89,12 +94,20 @@ const projects = [
         demo: "https://milky-drip.vercel.app/",
     },
     {
-        title: "Portfolio Website",
-        description: "This very website! A premium portfolio designed to attract freelance clients. Built with Next.js, Framer Motion, and distinct 'Shimmer' loading effects for a polished user experience.",
-        tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Shimmer UI"],
-        image: "/images/portfolio_hd.jpg",
-        github: "https://github.com/Krish9006/portfolio_krish",
-        demo: "https://github.com/Krish9006/portfolio_krish",
+        title: "Food Ordering & Algo",
+        description: "A smart food ordering platform featuring a custom recommendation algorithm. It fetches real-time data, optimizes delivery routes, and personalizes user feeds based on order history.",
+        tags: ["React", "Algorithms", "API Integration", "Optimization"],
+        image: "/images/food_ordering_photo_1771258725646.png",
+        github: "https://github.com/Krish9006/React-Nitin-Sir",
+        demo: "https://react-nitin-sir.vercel.app/",
+    },
+    {
+        title: "Axiora Learning Platform",
+        description: "A premium coaching website built for Axiora Learning, focused on IGCSE students (Grades 9–10). The platform highlights structured learning, concept-first teaching, and performance tracking. Designed to deliver a clean, professional user experience with clear program presentation and strong conversion-focused sections.",
+        tags: ["Next.js", "Tailwind CSS", "TypeScript", "Responsive Design", "Education Platform"],
+        image: "/images/axiora_learning.jpg",
+        github: "https://github.com/imawadh/axiora-learning", 
+        demo: "https://www.axioralearning.com/"
     }
 ];
 
