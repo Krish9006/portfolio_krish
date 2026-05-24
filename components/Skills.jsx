@@ -7,7 +7,7 @@ import {
     FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaJava, FaGithub, FaDatabase
 } from "react-icons/fa6";
 import {
-    SiNextdotjs, SiTailwindcss, SiExpress, SiMysql, SiMongodb, SiFirebase, SiVisualstudiocode, SiVercel, SiNetlify
+    SiNextdotjs, SiTailwindcss, SiExpress, SiMysql, SiMongodb, SiFirebase, SiVisualstudiocode, SiVercel, SiNetlify, SiFigma, SiJira
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 
@@ -32,6 +32,17 @@ const skillCategories = [
             { name: "Express.js", level: 90, icon: <SiExpress className="text-white" /> },
             { name: "Python", level: 75, icon: <FaPython className="text-blue-400" /> },
             { name: "Java", level: 80, icon: <FaJava className="text-red-500" /> },
+        ],
+    },
+    {
+        title: "Project & Collaboration",
+        icon: <Wrench className="w-6 h-6" />,
+        skills: [
+            { name: "Agile Development", level: 95, icon: <SiJira className="text-blue-400" /> },
+            { name: "Project Planning", level: 90, icon: <SiFigma className="text-cyan-400" /> },
+            { name: "UI/UX Design", level: 90, icon: <SiFigma className="text-fuchsia-400" /> },
+            { name: "Client Communication", level: 92, icon: <VscCode className="text-slate-300" /> },
+            { name: "Quality Assurance", level: 88, icon: <FaGithub className="text-white" /> },
         ],
     },
     {
