@@ -1,99 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #f97316;
-  /* Updated from Terminal Green */
-  --color-secondary: #00e5ff;
-  /* Cyan */
-  --color-accent: #1a1a1a;
-  /* Dark Surface */
-  --color-card: #1e293b;
-  /* Updated from Void Black Card */
-  --color-border: #333333;
+  /* Calm, warm-neutral palette with a single muted accent */
+  --color-background: #faf8f4;
+  --color-foreground: #1c1b19;
+  --color-muted: #55524c;
+  --color-subtle: #6b675f;
+  --color-surface: #f1eee7;
+  --color-line: #e2ddd1;
+  --color-primary: #1f3f8f;
 
-  --animate-marquee: marquee 25s linear infinite;
-  --animate-marquee2: marquee2 25s linear infinite;
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
-    }
-
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  @keyframes marquee2 {
-    0% {
-      transform: translateX(100%);
-    }
-
-    100% {
-      transform: translateX(0%);
-    }
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: -200% 0;
-    }
-
-    100% {
-      background-position: 200% 0;
-    }
-  }
-
-  --animate-shimmer: shimmer 2s infinite linear;
-}
-
-/* Shimmer Utility */
-.shimmer {
-  background: linear-gradient(90deg,
-      var(--color-card) 0%,
-      rgba(255, 255, 255, 0.08) 50%,
-      var(--color-card) 100%);
-  background-size: 200% 100%;
-  animation: var(--animate-shimmer);
-}
-
-:root {
-  --background: #0f172a;
-  /* Deep Slate */
-  --foreground: #e0e0e0;
-  /* Terminal Gray */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
   overflow-x: hidden;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 100px 100px;
-  background-position: center top;
 }
 
-/* Professional Card Utilities */
-.bento-card {
-  background-color: var(--color-card);
-  border: 1px solid var(--color-border);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+::selection {
+  background: color-mix(in oklab, var(--color-primary) 30%, transparent);
+  color: var(--color-foreground);
 }
 
-.bento-card:hover {
-  border-color: var(--color-primary);
-  transform: translateY(-2px);
-}
-
-/* Text Stroke Effect */
-.text-stroke {
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-  color: transparent;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

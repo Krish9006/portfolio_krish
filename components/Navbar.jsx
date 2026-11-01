@@ -1,98 +1,83 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 
 const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
-    { name: "Process", href: "#process" },
-    { name: "Skills", href: "#skills" },
-    { name: "Contact", href: "#contact" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#work" },
+    { name: "Skills", href: "#stack" },
+    { name: "About", href: "#about" },
 ];
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [hidden, setHidden] = useState(false);
-    const { scrollY } = useScroll();
+    const [scrolled, setScrolled] = useState(false);
 
-    useMotionValueEvent(scrollY, "change", (latest) => {
-        const previous = scrollY.getPrevious();
-        if (latest > previous && latest > 150 && !isOpen) {
-            setHidden(true);
-        } else {
-            setHidden(false);
-        }
-    });
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 24);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     return (
-        <motion.nav
-            variants={{
-                visible: { y: 0 },
-                hidden: { y: "-100%" },
-            }}
-            animate={hidden ? "hidden" : "visible"}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="fixed top-6 inset-x-0 max-w-2xl mx-auto z-50 px-6"
+        <header
+            className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+                scrolled || isOpen
+                    ? "border-b border-line bg-background/80 backdrop-blur-md"
+                    : "border-b border-transparent"
+            }`}
         >
-            <div className="relative backdrop-blur-md bg-black/50 border border-white/10 rounded-full shadow-lg px-6 py-3 flex items-center justify-between">
-                {/* Logo */}
-                <Link href="/" className="text-xl font-bold tracking-tighter text-white">
-                    KG<span className="text-primary">.</span>
-                </Link>
+            <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6" aria-label="Primary">
+                <a href="#home" className="font-serif text-xl tracking-tight text-foreground">
+                    Krish Gupta
+                </a>
 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
-                    {navLinks.slice(0, -1).map((link) => (
-                        <Link
+                <div className="hidden items-center gap-9 md:flex">
+                    {navLinks.map((link) => (
+                        <a
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
+                            className="text-sm text-muted transition-colors hover:text-foreground"
                         >
                             {link.name}
-                        </Link>
+                        </a>
                     ))}
-                    <Link
+                    <a
                         href="#contact"
-                        className="px-6 py-2 rounded-full bg-primary text-black font-bold text-sm hover:bg-white transition-colors"
+                        className="rounded-md border border-line bg-white px-4 py-1.5 text-sm text-foreground transition-colors hover:border-foreground"
                     >
-                        Let's Talk
-                    </Link>
+                        Contact
+                    </a>
                 </div>
 
-                {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-white"
+                    className="text-foreground md:hidden"
                     onClick={() => setIsOpen(!isOpen)}
+                    aria-label={isOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={isOpen}
                 >
-                    {isOpen ? <X /> : <Menu />}
+                    {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                 </button>
-            </div>
+            </nav>
 
-            {/* Mobile Menu Dropdown */}
             {isOpen && (
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="absolute top-full left-0 right-0 mt-2 mx-6 p-4 rounded-2xl bg-black/90 border border-white/10 backdrop-blur-xl md:hidden"
-                >
+                <div className="border-t border-line px-6 pb-6 pt-4 md:hidden">
                     <div className="flex flex-col gap-4">
-                        {navLinks.map((link) => (
-                            <Link
+                        {[...navLinks, { name: "Contact", href: "#contact" }].map((link) => (
+                            <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-slate-300 hover:text-primary transition-colors"
                                 onClick={() => setIsOpen(false)}
+                                className="text-muted transition-colors hover:text-foreground"
                             >
                                 {link.name}
-                            </Link>
+                            </a>
                         ))}
                     </div>
-                </motion.div>
+                </div>
             )}
-        </motion.nav>
+        </header>
     );
 }

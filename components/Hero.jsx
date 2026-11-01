@@ -1,81 +1,91 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
-import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import { BackgroundBeams } from "./BackgroundBeams";
+import { profile } from "@/lib/content";
+
+const facts = [
+    { label: "Looking for", value: "Internships and full-time software engineering roles. Also open to freelance and contract work." },
+    { label: "Experience", value: "2 internships (full-stack, healthcare AI), 3 freelance client projects" },
+    { label: "Main stack", value: "Next.js, React, Node.js, MongoDB, PostgreSQL, applied LLMs" },
+    { label: "Education", value: "B.Sc. (Hons.) Data Science & AI, IIT Guwahati, expected May 2027" },
+    { label: "Location", value: "Bangalore, India. Comfortable working remotely across time zones." },
+];
 
 export default function Hero() {
     return (
-        <section id="home" className="relative min-h-screen flex items-center pt-32 overflow-hidden">
-            <BackgroundBeams />
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-                    {/* Left Content */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <div className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium mb-6 animate-pulse">
-                            Available for Internships & Freelance
-                        </div>
-
-                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 mt-2">
-                            Hi, I'm <br />
-                            <span className="text-primary">Krish Gupta</span> <br />
-                            <span className="text-stroke text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">
-                                Software Engineer
-                            </span>
-                        </h1>
-
-                        <p className="text-slate-400 text-lg mb-8 max-w-lg leading-relaxed">
-                            Data Science & AI undergrad at <strong className="text-white">IIT Guwahati</strong>. I build scalable, AI-driven, and high-performance full-stack web applications.
+        <section id="home" className="pt-28 pb-20 md:pt-36 md:pb-28">
+            <div className="mx-auto max-w-5xl px-6">
+                <div className="grid items-start gap-12 md:grid-cols-12">
+                    <div className="md:col-span-8">
+                        <p className="mb-6 inline-flex items-center gap-2 text-sm text-muted">
+                            <span className="h-2 w-2 rounded-full bg-emerald-600" />
+                            Available for internships, full-time roles and freelance work
                         </p>
 
-                        <div className="flex flex-wrap gap-4 mb-12">
-                            <Link
-                                href="#contact"
-                                className="px-8 py-4 rounded-full bg-primary text-black font-bold hover:bg-white transition-colors flex items-center gap-2 hover:scale-105 active:scale-95 duration-200"
-                            >
-                                Let's Talk <ArrowRight className="w-5 h-5" />
-                            </Link>
+                        <h1
+                           
+                            className="font-serif text-5xl leading-[1.08] tracking-tight text-foreground md:text-6xl"
+                        >
+                            Krish Gupta
+                        </h1>
+                        <p
+                           
+                            className="mt-3 font-serif text-2xl leading-snug text-muted md:text-3xl"
+                        >
+                            Software engineer. I build full-stack web apps and the AI features inside them.
+                        </p>
+
+                        <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">
+                            I&apos;m a Data Science &amp; AI undergraduate at IIT Guwahati. I&apos;ve interned at The Holidays Club
+                            and iAverse, a healthcare AI company, and delivered client projects end to end. Below is
+                            what I built and how.
+                        </p>
+
+                        <div className="mt-10 flex flex-wrap items-center gap-4">
                             <a
-                                href="https://drive.google.com/file/d/1Yc0uH5qKDsoohowkonuMpXvCt79Pkkwv/view?usp=sharing"
-                                className="px-8 py-4 rounded-full border border-slate-700 text-white font-medium hover:border-primary hover:text-primary transition-colors flex items-center gap-2"
+                                href={profile.resume}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
                             >
-                                Download Resume <Download className="w-5 h-5" />
+                                Resume <ArrowUpRight className="h-4 w-4" />
+                            </a>
+                            <a
+                                href={`mailto:${profile.email}`}
+                                className="rounded-md border border-line bg-white px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-foreground"
+                            >
+                                Email me
+                            </a>
+                            <a
+                                href="#work"
+                                className="px-2 py-3 text-sm text-muted underline underline-offset-4 transition-colors hover:text-foreground"
+                            >
+                                See projects
                             </a>
                         </div>
-                    </motion.div>
+                    </div>
 
-                    {/* Right Image */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative"
-                    >
-                        <div className="relative w-full aspect-square max-w-[600px] mx-auto">
-                            {/* Circular Background Shape */}
-                            <div className="absolute inset-0 rounded-full border-2 border-slate-800 animate-[spin_20s_linear_infinite]" />
-                            <div className="absolute inset-4 rounded-full border border-slate-800 border-dashed animate-[spin_15s_linear_infinite_reverse]" />
-
-                            {/* Main Image Container */}
-                            <div className="absolute inset-8 rounded-full overflow-hidden bg-slate-900 border-4 border-slate-800">
-                                <Image
-                                    src="/images/profile.jpeg"
-                                    alt="Krish Gupta"
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
+                    <div className="md:col-span-4">
+                        <div className="relative aspect-[4/5] w-full max-w-xs overflow-hidden rounded-lg border border-line bg-surface md:max-w-none">
+                            <Image
+                                src="/images/profile_portrait.jpg"
+                                alt="Portrait of Krish Gupta"
+                                fill
+                                priority
+                                sizes="(min-width: 768px) 30vw, 80vw"
+                                className="object-cover"
+                            />
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
+
+                <dl className="mt-16 divide-y divide-line border-y border-line md:mt-20">
+                    {facts.map((item) => (
+                        <div key={item.label} className="grid gap-1 py-4 md:grid-cols-12 md:gap-6">
+                            <dt className="text-sm text-subtle md:col-span-3">{item.label}</dt>
+                            <dd className="text-foreground md:col-span-9">{item.value}</dd>
+                        </div>
+                    ))}
+                </dl>
             </div>
         </section>
     );

@@ -1,244 +1,130 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
-import SpotlightCard from "./SpotlightCard";
+import { ArrowUpRight, Github } from "lucide-react";
+import Section from "./Section";
+import Reveal from "./Reveal";
+import { featuredProjects, moreProjects } from "@/lib/content";
 
-const projects = [
-    {
-        title: "ContentBrain AI: RAG-Powered Strategic Content Assistant",
-        description: "A high-performance Retrieval-Augmented Generation (RAG) platform that processes uploaded documents, generates serverless vector embeddings, and enables real-time AI-driven querying. Automates key analytical tasks including topic extraction, content ideation, and action-oriented CTA recommendation.",
-        tags: ["Next.js", "React", "Groq Llama-3.3", "Pinecone DB", "Vector Embeddings", "RAG", "Tailwind CSS"],
-        image: "/images/contentbrain_hd.svg",
-        github: "https://github.com/Krish9006/AI-Insights",
-        demo: "https://ai-insights-omega.vercel.app/",
-        key_achievements: [
-            "Implemented serverless semantic text embedding pipelines using Pinecone Native Inference (multilingual-e5-large model).",
-            "Engineered low-latency context-aware Q&A features powered by Groq Llama-3.3-70b-versatile.",
-            "Automated structured data extraction to deliver instant key insights, content outlines, and marketing CTAs."
-        ]
-    },
-    {
-        title: "TrendPulse: AI-Driven Strategic Insights Engine",
-        description: "A sophisticated full-stack platform that leverages Google Gemini AI to transform natural language intent into automated market analysis. Engineered a resilient AI orchestration layer with multi-model fail-safes and automated news aggregation. Features real-time sentiment scoring and a personalized dashboard for strategic trend tracking.",
-        tags: ["MERN Stack", "Gemini AI 2.0", "NLP", "Data Orchestration", "Cron Scheduling"],
-        image: "/images/trendpulse_hd.jpg",
-        github: "https://github.com/Krish9006/TrendPulse",
-        demo: "https://trend-pulse-seven.vercel.app/",
-        key_achievements: [
-            "Implemented 100% uptime AI service with resilient model fallbacks.",
-            "Automated data extraction and sentiment analysis using Google Generative AI.",
-            "Engineered denormalized data architecture for high-speed insight retrieval."
-        ]
-    },
-    {
-        title: "Real-Time Chat Application",
-        description: "A fully functional, real-time messaging platform built for seamless communication. Engineered with a scalable real-time backend using Convex and secure user authentication via Clerk. Features instant message delivery, live presence indicators, and a highly responsive, aesthetically pleasing user interface from the landing page to the modern chat dashboard.",
-        tags: ["Next.js", "React", "Convex", "Clerk Auth", "Tailwind CSS", "Real-Time Systems"],
-        image: "/images/chat_app_new.png",
-        github: "https://github.com/Krish9006/chat-App",
-        demo: "https://chat-app-nine-eta-56.vercel.app/", // Replace with your actual deployed link if you have one
-        key_achievements: [
-            "Engineered a high-performance real-time messaging system with instant state synchronization via Convex.",
-            "Integrated Clerk for secure, frictionless user authentication and session management.",
-            "Designed a highly responsive and modern user interface utilizing Tailwind CSS and Shadcn UI components.",
-            "Implemented live presence indicators and seamless end-to-end functionality for a premium user experience."
-        ]
-    },
-    {
-        title: "SkillSync - Premium Team Discovery Platform",
-        description: "A high-performance SaaS application engineered for real-time professional networking. Features advanced search algorithms, secure authentication, and a 3D interactive UI that revolutionizes how developers connect.",
-        tags: ["Next.js 14", "Tailwind CSS", "Node.js", "Express.js", "JWT", "MongoDB", "Framer Motion", "Three.js"],
-        image: "/images/skillsync_hd.png",
-        github: "https://github.com/Krish9006/SkillSync-",
-        demo: "https://project-buddies-krish.netlify.app/",
-    },
-    {
-        title: "Portfolio Website",
-        description: "This very website! A premium portfolio designed to attract freelance clients. Built with Next.js, Framer Motion, and distinct 'Shimmer' loading effects for a polished user experience.",
-        tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Shimmer UI"],
-        image: "/images/portfolio_hd.jpg",
-        github: "https://github.com/Krish9006/portfolio_krish",
-        demo: "https://github.com/Krish9006/portfolio_krish",
-    },
-    {
-        "title": "DSA AI Instructor",
-        "description": "An intelligent, context-aware artificial intelligence instructor built with React.js and Google's Gemini API. Specifically engineered to help users master Data Structures and Algorithms through a strict pedagogy that prioritizes intuition, real-world analogies, and guided hints rather than directly spoon-feeding code.",
-        "tags": ["React.js", "Vite", "Google Gemini API", "Prompt Engineering", "CSS3", "State Management"],
-        "image": "/images/dsa_ai.jpg",
-        "github": "https://github.com/Krish9006/DSA-AI-Instructor",
-        "demo": "https://dsa-ai-instructor-six.vercel.app/",
-        "key_achievements": [
-            "Engineered a strict prompt architecture utilizing Google's Gemini API to teach complex DSA concepts using real-life metaphors.",
-            "Implemented seamless, persistent conversational memory securely leveraging browser localStorage for state management.",
-            "Designed a state-of-the-art Mix Theme UI featuring a dark sidebar navigation and a modern, responsive glassmorphism chat interface.",
-            "Developed 1-click learning paths and robust topic-filtering to restrict the AI strictly to programming and educational queries."
-        ]
-    },
-    {
-        title: "Krishka Kitchen",
-        description: "A high-performance 'Social-Commerce' platform merging food delivery with a TikTok-style video feed. Features robust dual-role authentication (User/Partner), real-time cart state management via Context API, and a premium dark-mode UI optimized for maximum user engagement.",
-        tags: ["React & Vite", "Node.js & Express", "MongoDB Aggregations", "Context API", "JWT Auth"],
-        image: "/images/krishka_showcase.png",
-        github: "https://github.com/Krish9006/krishka_Kitchen",
-        demo: "https://krishka-kitchen.vercel.app/",
-    },
-    {
-        title: "Milky Drip - E-Commerce",
-        description: "A modern, high-performance e-commerce platform for streetwear. Includes product filtering, cart functionality, and a seamless checkout experience.",
-        tags: ["React", "Redux", "Node.js", "Stripe"],
-        image: "/images/milkydrip_hd.png",
-        github: "https://github.com/Krish9006/MilkyDrip",
-        demo: "https://milky-drip.vercel.app/",
-    },
-    {
-        title: "Food Ordering & Algo",
-        description: "A smart food ordering platform featuring a custom recommendation algorithm. It fetches real-time data, optimizes delivery routes, and personalizes user feeds based on order history.",
-        tags: ["React", "Algorithms", "API Integration", "Optimization"],
-        image: "/images/food_ordering_photo_1771258725646.png",
-        github: "https://github.com/Krish9006/React-Nitin-Sir",
-        demo: "https://react-nitin-sir.vercel.app/",
-    },
-    {
-        title: "Axiora Learning Platform",
-        description: "A premium coaching website built for Axiora Learning, focused on IGCSE students (Grades 9–10). The platform highlights structured learning, concept-first teaching, and performance tracking. Designed to deliver a clean, professional user experience with clear program presentation and strong conversion-focused sections.",
-        tags: ["Next.js", "Tailwind CSS", "TypeScript", "Responsive Design", "Education Platform"],
-        image: "/images/axiora_learning.jpg",
-        github: "https://github.com/imawadh/axiora-learning", 
-        demo: "https://www.axioralearning.com/"
-    }
-];
+function FeaturedProject({ project, flip }) {
+    return (
+        <Reveal>
+            <article className="grid items-center gap-8 lg:grid-cols-12 lg:gap-14">
+                <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${project.title}`}
+                    className={`group relative block aspect-[16/10] overflow-hidden rounded-lg border border-line bg-surface lg:col-span-7 ${
+                        flip ? "lg:order-2" : ""
+                    }`}
+                >
+                    <Image
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        fill
+                        sizes="(min-width: 1024px) 58vw, 100vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                </a>
+
+                <div className={`lg:col-span-5 ${flip ? "lg:order-1" : ""}`}>
+                    <p className="text-sm font-medium text-primary">{project.kind}</p>
+                    <h3 className="mt-2 font-serif text-2xl text-foreground md:text-3xl">{project.title}</h3>
+                    <p className="mt-4 leading-relaxed text-muted">{project.summary}</p>
+
+                    <p className="mt-6 text-xs font-medium uppercase tracking-wider text-subtle">Engineering notes</p>
+                    <ul className="mt-2 space-y-2 text-sm leading-relaxed text-muted">
+                        {project.highlights.map((point) => (
+                            <li key={point} className="flex gap-3">
+                                <span className="mt-2 h-px w-4 shrink-0 bg-primary" />
+                                {point}
+                            </li>
+                        ))}
+                    </ul>
+
+                    <ul className="mt-6 flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                            <li key={tag} className="rounded border border-line bg-white px-2.5 py-1 text-xs text-muted">
+                                {tag}
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className="mt-8 flex items-center gap-6 text-sm">
+                        <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-foreground transition-colors hover:text-primary"
+                        >
+                            Live site <ArrowUpRight className="h-4 w-4" />
+                        </a>
+                        {project.github && (
+                            <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-foreground"
+                            >
+                                <Github className="h-4 w-4" /> Source
+                            </a>
+                        )}
+                    </div>
+                </div>
+            </article>
+        </Reveal>
+    );
+}
 
 export default function Projects() {
-    const [isLoading, setIsLoading] = React.useState(true);
-
-    React.useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 1500);
-        return () => clearTimeout(timer);
-    }, []);
-
-    if (isLoading) {
-        return (
-            <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <div className="text-center mb-16 space-y-4">
-                    <div className="h-4 w-24 mx-auto rounded shimmer" />
-                    <div className="h-10 w-64 mx-auto rounded shimmer" />
-                    <div className="h-4 w-96 mx-auto rounded shimmer" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {[1, 2, 3].map((item) => (
-                        <div key={item} className="h-[450px] rounded-2xl shimmer border border-white/5" />
-                    ))}
-                </div>
-            </section>
-        );
-    }
-
     return (
-        <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-            >
-                <span className="text-primary font-medium tracking-wider uppercase text-sm">My Work</span>
-                <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">Featured Projects</h2>
-                <p className="text-slate-400 max-w-2xl mx-auto">
-                    Here are some of the key projects I've worked on, showcasing my ability to build full-stack applications.
-                </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map((project, index) => (
-                    <SpotlightCard
-                        key={index}
-                        className="rounded-2xl h-full"
-                    >
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="h-full flex flex-col"
-                        >
-                            <div className="relative h-48 w-full overflow-hidden bg-slate-900/50 rounded-t-2xl">
-                                <Image
-                                    src={project.image}
-                                    alt={project.title}
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                                    {project.github && (
-                                        <a
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="p-2 bg-white/10 backdrop-blur-md rounded-full hover:bg-primary hover:text-black transition-colors"
-                                        >
-                                            <Github className="w-6 h-6" />
-                                        </a>
-                                    )}
-                                    <a
-                                        href={project.demo}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-2 bg-white/10 backdrop-blur-md rounded-full hover:bg-primary hover:text-black transition-colors"
-                                    >
-                                        <ExternalLink className="w-6 h-6" />
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="p-6 flex-1 flex flex-col">
-                                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                    {project.title}
-                                </h3>
-                                <p className="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">
-                                    {project.description}
-                                </p>
-                                <div className="flex flex-wrap gap-2 mb-6">
-                                    {project.tags.map((tag, tagIndex) => (
-                                        <span
-                                            key={tagIndex}
-                                            className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                                <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/10">
-                                    <a
-                                        href={project.demo}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex flex-1 items-center justify-center gap-2 py-2.5 text-sm font-semibold text-black bg-primary rounded-xl hover:bg-primary/90 transition-all hover:scale-[1.02] active:scale-[0.98]"
-                                    >
-                                        <ExternalLink className="w-4 h-4" />
-                                        Live Demo
-                                    </a>
-                                    {project.github && (
-                                        <a
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex flex-1 items-center justify-center gap-2 py-2.5 text-sm font-semibold text-white bg-slate-800 rounded-xl hover:bg-slate-700 transition-all border border-slate-700 hover:border-slate-600 hover:scale-[1.02] active:scale-[0.98]"
-                                        >
-                                            <Github className="w-4 h-4" />
-                                            GitHub
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-                        </motion.div>
-                    </SpotlightCard>
+        <Section
+            id="work"
+            label="Projects"
+            title="Selected work"
+            intro="Four projects I'd like you to look at first. Each is deployed, and the source is linked where it is public."
+        >
+            <div className="space-y-20 md:space-y-24">
+                {featuredProjects.map((project, i) => (
+                    <FeaturedProject key={project.title} project={project} flip={i % 2 === 1} />
                 ))}
             </div>
-        </section>
+
+            <Reveal className="mt-24 md:mt-28">
+                <h3 className="mb-6 text-sm font-medium text-primary">
+                    More projects
+                </h3>
+                <ul className="divide-y divide-line border-y border-line">
+                    {moreProjects.map((project) => (
+                        <li
+                            key={project.title}
+                            className="grid items-center gap-2 py-5 md:grid-cols-12 md:gap-6"
+                        >
+                            <h4 className="font-serif text-xl text-foreground md:col-span-3">{project.title}</h4>
+                            <p className="text-sm text-muted md:col-span-5">{project.note}</p>
+                            <p className="text-xs text-subtle md:col-span-2">{project.tags}</p>
+                            <div className="flex items-center gap-4 text-sm md:col-span-2 md:justify-end">
+                                <a
+                                    href={project.demo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1 text-foreground transition-colors hover:text-primary"
+                                >
+                                    Live <ArrowUpRight className="h-3.5 w-3.5" />
+                                </a>
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`${project.title} source on GitHub`}
+                                    className="text-muted transition-colors hover:text-foreground"
+                                >
+                                    <Github className="h-4 w-4" />
+                                </a>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </Reveal>
+        </Section>
     );
 }
