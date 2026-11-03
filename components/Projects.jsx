@@ -56,8 +56,18 @@ function FeaturedProject({ project, flip }) {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1.5 text-foreground transition-colors hover:text-primary"
                         >
-                            Live site <ArrowUpRight className="h-4 w-4" />
+                            {project.demoLabel ?? "Live site"} <ArrowUpRight className="h-4 w-4" />
                         </a>
+                        {project.appStore && (
+                            <a
+                                href={project.appStore}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 text-foreground transition-colors hover:text-primary"
+                            >
+                                App Store <ArrowUpRight className="h-4 w-4" />
+                            </a>
+                        )}
                         {project.github && (
                             <a
                                 href={project.github}
@@ -81,7 +91,7 @@ export default function Projects() {
             id="work"
             label="Projects"
             title="Selected work"
-            intro="Four projects I'd like you to look at first. Each is deployed, and the source is linked where it is public."
+            intro="Five projects I'd like you to look at first. Each is deployed, and the source is linked where it is public."
         >
             <div className="space-y-20 md:space-y-24">
                 {featuredProjects.map((project, i) => (
